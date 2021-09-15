@@ -1,7 +1,8 @@
 /*
-Topic:Graphs, ShortestPath, Djikstras
+Topic(s): Graphs | ShortestPath | Dijkstras | Adjacency Matrix
 Author:Baboya Choch
 */
+
 const minDist = (visited, distance) => {
 	let minVal = Number.MAX_VALUE;
 	let min = -1;

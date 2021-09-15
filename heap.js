@@ -1,7 +1,8 @@
 /*
-Topic(s):Heap
+Topic(s): Heaps
 Author:Baboya Choch
 */
+
 const MAX_SIZE = 100;
 class Heap {
 	constructor() {
