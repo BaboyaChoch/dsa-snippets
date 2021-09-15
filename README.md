@@ -1,2 +1,2 @@
 # dsa-snippets
-js implemenations of common  data strucutures and algos
+JS implementations of common data structures and algos 
