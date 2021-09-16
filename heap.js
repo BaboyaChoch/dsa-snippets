@@ -9,12 +9,18 @@ class Heap {
 		this.heap = new Array(MAX_SIZE);
 		this.size = -1;
 	}
+
 	insert(element) {
 		this.size++;
 		this.heap[this.size] = element;
 		this.floatUp(this.size);
 	}
+	isEmpty() {
+		return this.size < 0;
+	}
 	removeMin() {
+		if (this.isEmpty()) return null;
+
 		const min = this.heap[0];
 		this.swap(this.size, 0);
 		this.heap[this.size] = undefined;
@@ -22,21 +28,27 @@ class Heap {
 		this.sinkDown(0);
 		return min;
 	}
+
 	getMin() {
-		return this.heap[0];
+		return this.isEmptyis ? null : this.heap[0];
 	}
+
 	getParent(index) {
 		return Math.floor((index - 1) / 2);
 	}
+
 	getLeft(parent) {
 		return parent * 2 + 1;
 	}
+
 	getRight(parent) {
 		return parent * 2 + 2;
 	}
+
 	getMin() {
 		return this.heap[0];
 	}
+
 	floatUp(index) {
 		let parent = this.getParent(index);
 
@@ -46,6 +58,7 @@ class Heap {
 		}
 		return;
 	}
+
 	sinkDown(index) {
 		let min = index;
 		let left = this.getLeft(index);
@@ -63,13 +76,16 @@ class Heap {
 		}
 		return;
 	}
+
 	swap(pos1, pos2) {
 		let temp = this.heap[pos1];
 		this.heap[pos1] = this.heap[pos2];
 		this.heap[pos2] = temp;
 	}
+
 	printHeap() {
-		console.log(...this.heap.slice(0, this.size + 1));
+		if (this.isEmpty()) console.log("Empty Heap");
+		else console.log(...this.heap.slice(0, this.size + 1));
 	}
 }
 

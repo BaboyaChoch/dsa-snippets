@@ -11,15 +11,17 @@ class Node {
 	}
 }
 
-let tree = new Node(
+const tree = new Node(
 	1,
 	new Node(2, new Node(4), new Node(5)),
 	new Node(3, new Node(6, null, new Node(13)), new Node(7))
 );
 
-//depth first traversal of tree to get length
-//pre-order
-//pre(before):: root comes before left-right
+/**
+ * finding length of treee using dft
+ * pre-order
+ * pre(before):: root visited before left-right
+ */
 function getLength(node) {
 	if (!node) return 0;
 	let count = 1;
@@ -27,7 +29,9 @@ function getLength(node) {
 	return count;
 }
 
-//depth-first-traversal of bst
+/**
+ * depth-first-traversal of bst
+ */
 function dft(node) {
 	if (!node) return;
 
@@ -36,7 +40,9 @@ function dft(node) {
 	dft(node.right);
 }
 
-//breadth-first-traversal of bst
+/**
+ * breadth-first-traversal of bst
+ */
 function bft(node) {
 	if (!node) return -1;
 	let q = [];
@@ -50,7 +56,10 @@ function bft(node) {
 	}
 }
 
-//prints values level by level
+/**
+ * prints values level by level
+ * BFT
+ */
 function levelPrint(node) {
 	if (!node) return -1;
 	let q = [];
